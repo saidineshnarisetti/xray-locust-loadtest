@@ -1,54 +1,75 @@
-# JFrog Xray Load Testing with Locust
+🧪 JFrog Xray Load Testing with Locust
+📋 Prerequisites
+Python 3.8+
 
-## Prerequisites
-- Python 3.8+
-- Docker installed
-- JFrog trial account setup
+Docker (for pushing test images)
 
-## Setup
-```bash
-pip3 install -r requirements.txt
-```
+JFrog trial account (Sign up here)
 
-## Run Locust
-```bash
+⚙️ Setup
+Create and activate a virtual environment:
+
+```python3 -m venv venv
 source venv/bin/activate
-locust -f locustfile.py
-```
+Install dependencies:```
 
-## Load Test Scenario
-- Create Docker repository
-- Push Docker image (do this manually using `docker_image.sh`)
-- Create policy & watch
-- Apply watch
-- Check scan status
-- Fetch violations
 
-## Report
-Run tests via browser at http://localhost:8089
-Export results from UI or extend for CSV/json using Locust event hooks.
+```pip install -r requirements.txt```
+🚀 Running Locust
+To start the Locust web UI:
 
-## Load Injection Pattern
-✅ 1. Gradual Ramp-Up (Realistic User Growth)
-Use case: Simulate users logging in over time.
+```locust -f locustfile.py```
+Then open your browser and go to: http://localhost:8089
 
-Users: 50
-Spawn rate: 5 (10 seconds to reach full load)
-Runtime: 5m
+🧪 Load Test Workflow
+The test simulates the following scenario:
 
-✅ 2. Spike Test (Sudden Load Burst)
-Use case: Test how system handles a sudden traffic spike (e.g., product launch).
+✅ Create Docker repository
 
-Users: 100
-Ramp up: 100 (spawn instantly)
-Runtime: 2m
+✅ Push Docker image (run manually via docker_image.sh)
 
-To run in Head-less mode:
-locust -f locustfile.py \
+✅ Create policy and watch
+
+✅ Apply the watch to the repository
+
+✅ Trigger a scan
+
+✅ Retrieve violations
+
+📈 Load Patterns
+1. Gradual Ramp-Up (Realistic Growth)
+👥 Users: 50
+
+🚀 Spawn Rate: 5 users/sec
+
+⏱️ Run Time: 5 minutes
+
+Use Case: Simulates steady user onboarding or normal traffic growth.
+
+2. Spike Test (Sudden Load Burst)
+👥 Users: 100
+
+🚀 Spawn Rate: 100 users/sec
+
+⏱️ Run Time: 2 minutes
+
+Use Case: Stress test for traffic bursts (e.g., marketing campaigns or releases).
+
+🧑‍💻 Running in Headless Mode (CI/CD or CLI)
+
+```locust -f locustfile.py \
   --headless \
   --users 10 \
   --spawn-rate 2 \
   --run-time 1m \
   --host https://trialf6dxqy.jfrog.io \
   --html report.html \
-  --csv report
+  --csv report```
+This will generate report.html, report_stats.csv, and report_failures.csv for analysis.
+
+📊 Reporting
+Run tests via the browser or CLI (headless mode).
+
+Download metrics directly from the UI.
+
+Customize export (JSON, CSV) using Locust event hooks.
