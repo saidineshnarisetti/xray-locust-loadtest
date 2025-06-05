@@ -4,7 +4,7 @@ Python 3.8+
 
 Docker (for pushing test images)
 
-JFrog trial account (Sign up here)
+JFrog trial account
 
 ⚙️ Setup
 Create and activate a virtual environment:
