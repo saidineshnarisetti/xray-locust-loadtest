@@ -1,0 +1,58 @@
+Count,Message,Traceback,Nodes
+1,"HTTPSConnectionPool(host='trialf6dxqy.jfrog.io', port=443): Max retries exceeded with url: /xray/api/v2/policies (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x11682ba50>: Failed to resolve 'trialf6dxqy.jfrog.io' ([Errno 8] nodename nor servname provided, or not known)""))","  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 340, in run
+    self.execute_next_task()
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 373, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 385, in execute_task
+    task(self)
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/core/tasks.py"", line 23, in run_full_scan
+    create_policy.run_create_policy(self.names)
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/tests/create_policy.py"", line 56, in run_create_policy
+    create_policy(policy_name, description, rules)
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/tests/create_policy.py"", line 15, in create_policy
+    response = tracked_request(""create_policy"",""POST"", url, headers=AUTH_HEADER,json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/utils/locust_wrappers.py"", line 9, in tracked_request
+    response = requests.request(method, url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/api.py"", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/sessions.py"", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/sessions.py"", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/adapters.py"", line 700, in send
+    raise ConnectionError(e, request=request)
+",local
+1,"HTTPSConnectionPool(host='trialf6dxqy.jfrog.io', port=443): Max retries exceeded with url: /xray/api/v2/watches (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x10f771a50>: Failed to resolve 'trialf6dxqy.jfrog.io' ([Errno 8] nodename nor servname provided, or not known)""))","  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 340, in run
+    self.execute_next_task()
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 373, in execute_next_task
+    self.execute_task(self._task_queue.popleft())
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/locust/user/task.py"", line 385, in execute_task
+    task(self)
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/core/tasks.py"", line 24, in run_full_scan
+    create_watch.run_create_watch(self.names)
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/tests/create_watch.py"", line 61, in run_create_watch
+    result = create_watch(watch_name, description, active, resources, assigned_policies)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/tests/create_watch.py"", line 25, in create_watch
+    response = tracked_request(""create_watch"",""POST"", url, headers=AUTH_HEADER,json=payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/utils/locust_wrappers.py"", line 9, in tracked_request
+    response = requests.request(method, url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/api.py"", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/sessions.py"", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/sessions.py"", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/Users/saidinesh/Documents/xray-locust-loadtest/venv/lib/python3.11/site-packages/requests/adapters.py"", line 700, in send
+    raise ConnectionError(e, request=request)
+",local

@@ -1,0 +1,3 @@
+Method,Name,Error,Occurrences
+POST,create_watch,"ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'trialf6dxqy.jfrog.io\', port=443): Max retries exceeded with url: /xray/api/v2/watches (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x....>: Failed to resolve \'trialf6dxqy.jfrog.io\' ([Errno 8] nodename nor servname provided, or not known)""))'))",1
+POST,create_policy,"ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'trialf6dxqy.jfrog.io\', port=443): Max retries exceeded with url: /xray/api/v2/policies (Caused by NameResolutionError(""<urllib3.connection.HTTPSConnection object at 0x....>: Failed to resolve \'trialf6dxqy.jfrog.io\' ([Errno 8] nodename nor servname provided, or not known)""))'))",1
