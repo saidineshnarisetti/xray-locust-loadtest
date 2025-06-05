@@ -57,14 +57,17 @@ Use Case: Stress test for traffic bursts (e.g., marketing campaigns or releases)
 
 🧑‍💻 Running in Headless Mode (CI/CD or CLI)
 
-```locust -f locustfile.py \
+```
+locust -f locustfile.py \
   --headless \
   --users 10 \
   --spawn-rate 2 \
   --run-time 1m \
   --host https://trialf6dxqy.jfrog.io \
   --html report.html \
-  --csv report```
+  --csv report
+```
+
 This will generate report.html, report_stats.csv, and report_failures.csv for analysis.
 
 📊 Reporting
